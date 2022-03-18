@@ -1,0 +1,23 @@
+{
+  "name": "vega-it-internship-starter",
+  "version": "1.0.0",
+  "description": "Vega IT - internship starter",
+  "author": "Vega IT",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-consolidate": "^0.2.0",
+    "gulp-sass": "^4.1.0",
+    "gulp-sass-lint": "^1.4.0",
+    "gulp-postcss": "^9.0.0",
+    "gulp-stylelint": "^13.0.0",
+    "underscore": "1.12.0",
+    "autoprefixer": "^10.1.0",
+    "postcss": "^8.2.0",
+    "browser-sync": "^2.26.13"
+  },
+  "dependencies": {
+    "sass": "^1.49.7",
+    "stylelint": "^14.5.0"
+  }
+}
