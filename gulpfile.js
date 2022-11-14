@@ -1,5 +1,5 @@
 const gulp = require("gulp");
-const sass = require("gulp-sass");
+const sass = require('gulp-sass')(require('sass'));
 const postcss = require("gulp-postcss");
 const gulpStylelint = require("gulp-stylelint");
 const autoprefixer = require("autoprefixer");
@@ -8,7 +8,7 @@ const browserSync = require("browser-sync").create();
 // scss compiler
 gulp.task("scss", () => {
   return gulp
-    .src("src/scss/style.scss")
+    .src("src/scss/styles.scss")
     .pipe(sass())
     .pipe(postcss([autoprefixer("last 2 versions")]))
     .pipe(gulp.dest("dist/css"))
@@ -30,25 +30,31 @@ gulp.task("scss-lint", () => {
 });
 
 // copy js files to dist
-gulp.task("copy-js", () => {
+gulp.task("js", () => {
   return gulp.src("src/js/*.js").pipe(gulp.dest("dist/js"));
 });
 
 // copy html files to dist
-gulp.task("copy-html", () => {
+gulp.task("html", () => {
   return gulp.src("src/*.{html,ico}").pipe(gulp.dest("dist"));
 });
 
+// copy assets files to dist
+gulp.task("assets", () => {
+  return gulp.src("src/assets/*/*").pipe(gulp.dest("dist/assets"));
+});
+
 // copy font files to dist
-gulp.task("copy-fonts", () => {
+gulp.task("fonts", () => {
   return gulp
-    .src("src/fonts/*.{ttf,woff,woff2,eof}")
+    .src("src/assets/fonts/*.{ttf,woff,woff2,eof}")
     .pipe(gulp.dest("dist/fonts"));
 });
 
 // browser sync
 gulp.task("watch", () => {
   browserSync.init({
+    notify: false,
     server: {
       baseDir: "./dist",
     },
@@ -66,9 +72,8 @@ gulp.task("watch", () => {
 
 //build project
 gulp.task(
-  "project-build",
-  gulp.series("copy-fonts", "scss", "copy-js", "copy-html")
-  // gulp.series("copy-fonts", "scss-lint", "scss", "copy-js", "copy-html")
+  "build",
+  gulp.series("fonts", "scss", "js", "html", "assets")
 );
 
 //to run watch task type: gulp
