@@ -26,17 +26,11 @@
 @function icon-char($filename) {
     $char: "";
 
-    @if $filename == ico-dog {
+    @if $filename == banana {
         $char: "\E001";
     }
-    @if $filename == ico-incorrect {
+    @if $filename == house {
         $char: "\E002";
-    }
-    @if $filename == ico-pin {
-        $char: "\E003";
-    }
-    @if $filename == ico-star {
-        $char: "\E004";
     }
 
     @return $char;
@@ -53,16 +47,10 @@
     }
 }
 
-.icon-ico-dog {
-    @include icon(ico-dog);
+.icon-banana {
+    @include icon(banana);
 }
-.icon-ico-incorrect {
-    @include icon(ico-incorrect);
-}
-.icon-ico-pin {
-    @include icon(ico-pin);
-}
-.icon-ico-star {
-    @include icon(ico-star);
+.icon-house {
+    @include icon(house);
 }
 
