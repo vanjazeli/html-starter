@@ -1,7 +1,5 @@
 Setting up Gulp in a project
 
----------------------------------------------------------
-
 Run node.js command prompt
 
 ---------------------------------------------------------
@@ -17,6 +15,13 @@ npm install
 ---------------------------------------------------------
 
 To compile styles/svgs run "gulp" command
+
+--------------------------------------------------------
+                        Tasks
+
+Start project -----> gulp ( Live server will start auto )
+
+Build project -----> gulp build ---> Building in new /dist folder
 
 ---------------------------------------------------------
 
@@ -36,6 +41,10 @@ gulp-styleliny ----> npm i gulp-stylelint
 
 browsersync ----> npm i browsersync
 
+gulp-iconfont-css ----> npm i gulp-iconfont-css
+
+gulp-path ----> npm i path
+
 --------------------------------------------------------
 
 Having error on gulp saas:
@@ -51,6 +60,10 @@ npm uninstall sass-loader
 3rd step:
 npm install sass -dev
 
+Iconfont 
+
+TODO //
+
 --------------------------------------------------------- UPDATES ---------------------------------------------------------
 
 Update 1.1
@@ -61,4 +74,14 @@ Update 1.1
 
 Update 1.2 
 
--Readme file updated
+- Readme file updated
+
+--------------------
+
+Update 1.3
+
+- Added iconfont
+
+- Readme file updated
+
+--------------------
